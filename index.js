@@ -5,9 +5,11 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
 });
+
 app.post("/", function (req, res) {
   const query = req.body.query;
   const Key = "77e66a0bdf9f01617cbea598cc754ccc";
@@ -30,7 +32,7 @@ app.post("/", function (req, res) {
 
       res.write("<h1>Temperature is " + temp + "</h1>");
       res.write("<p>" + description + "</p>");
-      res.write('<img id="wicon" src="' + iconURL + '" alt="Weather icon">');
+      res.write('<img id="Wicon" src="' + iconURL + '" alt="Weather icon">');
 
       res.send();
     });
